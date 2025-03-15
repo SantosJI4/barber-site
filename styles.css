@@ -1,0 +1,922 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+  color: white;
+}
+
+body {
+  background-color: rgb(27, 27, 31);
+}
+
+/* Header and Navigation Styles */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("https://www.itl.cat/pngfile/big/306-3066489_barber-pole-hd.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-bottom: 5px solid rgb(238, 238, 238);
+}
+
+.header .title {
+  margin: 0;
+  z-index: 1000;
+}
+
+.header .nav-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header .nav-links li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.32);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.header .nav-links li a:hover {
+  background-color: darkred;
+}
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .header .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header .nav-links li a {
+    margin: 5px 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Other Styles */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.container h1 {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.container p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgba(0, 0, 0, 0.32);
+  text-decoration: none;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.texto-sobre-mim {
+  text-align: left;
+  margin-top: 20px;
+  background: linear-gradient(to right, rgb(207, 50, 29), rgb(24, 20, 20));
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.foto-perfil {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.texto-sobre-mim p {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+}
+
+.sobre-mim {
+  padding: 50px 20px;
+  background: linear-gradient(to left, rgb(207, 86, 29), rgb(24, 20, 20));
+  color: white;
+}
+
+.sobre-mim h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: rgb(65, 27, 27);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.beneficios {
+  background: linear-gradient(to right, rgb(58, 6, 22), rgb(24, 20, 20));
+}
+
+.card h2 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+
+.card p {
+  padding: 0 10px 20px;
+  font-size: 1em;
+  color: #fff;
+}
+
+.card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+}
+
+.card p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.marque-horario {
+  background: linear-gradient(to left, rgb(15, 59, 85), rgb(24, 20, 20));
+  padding: 50px 0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.button-card {
+  position: relative;
+  background-color: rgb(207, 86, 29);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.button-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(177, 66, 19);
+  z-index: 0;
+  transition: transform 0.3s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.button-card:hover::before {
+  transform: scaleX(1);
+}
+
+.button-card:hover {
+  color: white;
+}
+
+.button-card span {
+  position: relative;
+  z-index: 1;
+}
+
+.payment-options {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 40px 0;
+}
+
+.payment-card {
+  background-color: rgb(65, 27, 27);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.payment-card:hover {
+  transform: translateY(-10px);
+}
+
+.payment-card i {
+  font-size: 40px;
+  color: rgb(207, 86, 29);
+  margin-bottom: 15px;
+}
+
+.payment-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.payment-card p {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.payment-card .discount,
+.payment-card .installments {
+  color: rgb(207, 86, 29);
+  font-weight: bold;
+}
+
+.price-list {
+  background-color: rgb(65, 27, 27);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.price-list h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: rgb(207, 86, 29);
+}
+
+.price-list ul {
+  list-style: none;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+}
+
+.form-container {
+  background-color: rgb(65, 27, 27);
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  margin: 40px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: rgb(207, 86, 29);
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: rgb(207, 86, 29);
+}
+
+.submit-btn {
+  background-color: rgb(207, 86, 29);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: rgb(177, 66, 19);
+}
+
+.banner {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.carousel-item.active {
+  opacity: 1;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.carousel-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: rgb(207, 86, 29);
+}
+
+.carousel-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control:hover {
+  background: rgba(207, 86, 29, 0.8);
+}
+
+.carousel-control.prev {
+  left: 20px;
+}
+
+.carousel-control.next {
+  right: 20px;
+}
+
+.btn {
+  background-color: rgb(207, 86, 29);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: rgb(177, 66, 19);
+}
+
+.beneficios {
+  background-color: rgb(44, 42, 40);
+  padding: 60px 0;
+}
+
+.beneficios h2 {
+  text-align: center;
+  color: rgb(207, 86, 29);
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.beneficios-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.beneficio-card {
+  background-color: rgb(65, 27, 27);
+  border-radius: 10px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.beneficio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.beneficio-card i {
+  font-size: 40px;
+  color: rgb(207, 86, 29);
+  margin-bottom: 20px;
+}
+
+.beneficio-card h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.beneficio-card p {
+  color: #ccc;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.beneficio-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.beneficio-card ul li {
+  color: #ccc;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.beneficio-card ul li:before {
+  content: "•";
+  color: rgb(207, 86, 29);
+  position: absolute;
+  left: 0;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid rgb(207, 86, 29);
+  color: rgb(207, 86, 29);
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: rgb(207, 86, 29);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .beneficios-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .payment-options {
+    flex-wrap: wrap;
+  }
+
+  .carousel-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 50px 20px;
+  }
+
+  .header .title {
+    margin-bottom: 20px;
+  }
+
+  .header .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .header .nav-links li a {
+    margin: 5px 0;
+    width: 200px;
+    text-align: center;
+  }
+
+  .banner {
+    height: 400px;
+  }
+
+  .carousel-content {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .carousel-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .carousel-content p {
+    font-size: 1rem;
+  }
+
+  .texto-sobre-mim {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .foto-perfil {
+    margin-bottom: 20px;
+  }
+
+  .beneficios-cards,
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .payment-card {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .price-list,
+  .form-container {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-control {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+
+  .beneficio-card,
+  .card {
+    padding: 15px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+}
+
+@media (hover: none) {
+  .beneficio-card:hover,
+  .card:hover,
+  .payment-card:hover {
+    transform: none;
+  }
+}
+
+.footer {
+  background-color: rgb(27, 27, 31);
+  padding: 20px 0;
+  color: white;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.footer-address i {
+  font-size: 1.2rem;
+  color: rgb(207, 86, 29);
+}
+
+.footer-address p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  color: white;
+  font-size: 1.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-social a :hover {
+  color: rgb(207, 86, 29);
+}
+
+#facebook :hover {
+  color: #3b5998;
+}
+
+#instagram :hover {
+  color: #e4405f;
+}
+
+#twitter :hover {
+  color: #1da1f2;
+}
+
+.reviews {
+  padding: 60px 0;
+  background: linear-gradient(to right, rgb(24, 20, 20), rgb(58, 6, 22));
+}
+
+.reviews h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+  font-size: 2rem;
+}
+
+.review-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.review-card {
+  background-color: rgb(65, 27, 27);
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.review-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.review-info h3 {
+  color: white;
+  margin: 0 0 5px 0;
+  font-size: 1.2rem;
+}
+
+.stars {
+  color: rgb(207, 86, 29);
+  font-size: 1rem;
+}
+
+.review-text {
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.review-date {
+  display: block;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .review-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .review-card {
+    margin: 0 auto;
+    max-width: 400px;
+  }
+}
+
+.read-more-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: linear-gradient(145deg, rgb(207, 86, 29), rgb(65, 27, 27));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.read-more-content {
+  text-align: center;
+}
+
+.read-more-card i {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.read-more-card h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.read-more-card p {
+  color: #ccc;
+  font-size: 0.9rem;
+}
+
+.read-more-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.read-more-card:hover i {
+  transform: rotate(180deg);
+}
+
+.status-container {
+  text-align: center;
+  padding: 20px 0;
+  background: linear-gradient(to right, rgb(24, 20, 20), rgb(58, 6, 22));
+}
+
+.status-button {
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.status-button.open {
+  background-color: #39ff14;
+  box-shadow: 0 0 5px #39ff14, 0 0 25px #39ff14, 0 0 50px #39ff14,
+    0 0 100px #39ff14;
+  border: 2px solid #39ff14;
+}
+
+.status-button.closed {
+  background-color: #ff1414;
+  box-shadow: 0 0 5px #ff1414, 0 0 25px #ff1414, 0 0 50px #ff1414,
+    0 0 100px #ff1414;
+  border: 2px solid #ff1414;
+}
+
+.status-text {
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes neonPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.status-button {
+  animation: neonPulse 2s infinite;
+}
